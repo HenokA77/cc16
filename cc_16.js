@@ -38,3 +38,33 @@ async function fetchProductsAsync() {
     }
 }
 
+// Task 4: Display products on the page
+function displayProducts(products) {
+    // Select the product container in your HTML
+    const container = document.getElementById('product-container');
+  
+    // Clear previous contents
+    container.innerHTML = '';
+  
+    // Display only the first 5 products
+    products.slice(0, 5).forEach(product => {
+      // Extract product details from API response
+      const { name, price, image } = product.fields;
+      const imageUrl = image[0].url;
+  
+      // Create a div element to hold the product info
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product'); // for CSS styling
+  
+      // Populate div with product details
+      productDiv.innerHTML = `
+        <img src="${imageUrl}" alt="${name}" />
+        <h3>${name}</h3>
+        <p>$${(price / 100).toFixed(2)}</p>
+      `;
+  
+      // Append the product div to the container
+      container.appendChild(productDiv);
+    });
+  }
+  
