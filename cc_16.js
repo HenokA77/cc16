@@ -68,3 +68,10 @@ function displayProducts(products) {
     });
   }
   
+
+
+// Task 5: Reusable error handling function
+function handleError(error) {
+    console.log('An error occurred:', error.message);
+  }
+  
