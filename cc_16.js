@@ -75,3 +75,6 @@ function handleError(error) {
     console.log('An error occurred:', error.message);
   }
   
+  // Task 6: Trigger both fetch methods on script load
+fetchProductsThen();
+fetchProductsAsync();
